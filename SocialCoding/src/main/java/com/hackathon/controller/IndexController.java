@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hackathon.dao.DataManager;
+
 @Controller
 public class IndexController {
 	
@@ -31,6 +33,13 @@ public class IndexController {
     @RequestMapping("/")
     public ModelAndView myIndex() {
     	return new ModelAndView("greet");
+    }
+    
+    @RequestMapping("/helloWorld")
+    public ModelAndView helloWorld() {
+    	DataManager dm = new DataManager();
+    	dm.DataManagerTest();
+    	return new ModelAndView("HelloWorld");
     }
 
 }
